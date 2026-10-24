@@ -18,10 +18,11 @@ function computerPlay() {
   }
 }
 
-function playRock (){
+function playMove (playerChoice){
   let result = '';
   computerPlay();
 
+  if(playerChoice === 'rock') {
   if (computerSelection === 'rock') {
     result = 'It is a tie!';
     score.ties++;
@@ -32,17 +33,10 @@ function playRock (){
     result = 'You win!';
     score.wins++;
   }
-
-  alert(`Computer chose is ${computerSelection}. Therefore, ${result}
-You have played ${playTime} times.
-Wins = ${score.wins}  Losses = ${score.losses}  Ties = ${score.ties}`);
 }
 
-function playPaper (){
-  let result = '';
-  computerPlay();
-
-  if(computerSelection === 'rock'){
+else if(playerChoice === 'paper') {
+  if (computerSelection === 'rock') {
     result = 'You win!';
     score.wins++;
   } else if (computerSelection === 'paper') {
@@ -52,17 +46,10 @@ function playPaper (){
     result = 'You lose!';
     score.losses++;
   }
-
-  alert(`Computer chose is ${computerSelection}. Therefore, ${result}
-You have played ${playTime} times.
-Wins = ${score.wins}  Losses = ${score.losses}  Ties = ${score.ties}`);
 }
 
-function playScissors (){
-  let result = '';
-  computerPlay();
-
-  if(computerSelection === 'rock'){
+else if(playerChoice === 'scissors') {
+  if (computerSelection === 'rock') {
     result = 'You lose!';
     score.losses++;
   } else if (computerSelection === 'paper') {
@@ -72,7 +59,7 @@ function playScissors (){
     result = 'It is a tie!';
     score.ties++;
   }
-
+} 
   alert(`Computer chose is ${computerSelection}. Therefore, ${result}
 You have played ${playTime} times.
 Wins = ${score.wins}  Losses = ${score.losses}  Ties = ${score.ties}`);
