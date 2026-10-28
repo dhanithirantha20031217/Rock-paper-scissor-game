@@ -1,0 +1,94 @@
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+#title {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 40px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.player-move {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.move-button {
+  background-color: transparent;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 100px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.game-info {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.game-stop {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.game-stop-button {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.game-restart {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.game-restart-button {
+  background-color: rgb(0, 128, 0);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.start-massege {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.game-continue-button {
+  background-color: rgb(0, 0, 255);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}

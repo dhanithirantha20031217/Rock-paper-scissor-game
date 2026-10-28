@@ -6,19 +6,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissor Game</title>
+  <link rel="stylesheet" href="Style.css">
 </head>
 
 <body>
+  <h1 id="title">Rock Paper Scissors</h1>
+  <p class="start-massege"></p>
+  <div class="button-container">
+  <button class="move-button" onclick="playMove('rock')"><img src="image/rock-emoji.png" alt="Rock" class = "player-move"></button>
+  <button class="move-button" onclick="playMove('paper')"><img src="image/paper-emoji.png" alt="Paper" class = "player-move"></button>
+  <button class="move-button" onclick="playMove('scissors')"><img src="image/scissors-emoji.png" alt="Scissors" class = "player-move">  </button>
+  </div>
 
-  <button onclick="playMove('rock')">Rock</button>
-  <button onclick="playMove('paper')">Paper</button>
-  <button onclick="playMove('scissors')">Scissors</button>
-  <button onclick="resetGame()">Reset</button>
-
-
+  <div class="game-info">
+  <p class="js-play-time"></p>
   <p class="js-result"></p>
-  <p class="js-moves"></p>
+  <p class="js-state"></p>
   <p class="js-score"></p>
+  </div>
+  
+  <div class="game-stop">
+    <button onclick="showResults()" class="game-stop-button">Stop Game</button>   
+  </div>
+  
+  <div class="game-restart">
+    <button onclick="resetGame()" class="game-restart-button">Restart Game</button>
+  </div>
+
+
+
 
   <script src="script.js"></script>
 </body>
