@@ -99,9 +99,9 @@ function updateReset() {
   document.querySelector('.js-score').innerHTML = '';
   document.querySelector('.game-stop').innerHTML = ``;
   document.querySelector('.game-restart').innerHTML = ``;
-  document.querySelector('.button-container').innerHTML = `<button class="move-button" onclick="playMove('rock')"><img src="image/rock-emoji.png" alt="Rock" class = "player-move"></button>
-  <button class="move-button" onclick="playMove('paper')"><img src="image/paper-emoji.png" alt="Paper" class = "player-move"></button>
-  <button class="move-button" onclick="playMove('scissors')"><img src="image/scissors-emoji.png" alt="Scissors" class = "player-move"></button>`;
+  document.querySelector('.button-container').innerHTML = `<button class="move-button" onclick="playMove('rock')"><img src="image/rock-emoji.png" alt="Rock" title="Rock" class = "player-move"></button>
+  <button class="move-button" onclick="playMove('paper')"><img src="image/paper-emoji.png" alt="Paper" title="Paper" class = "player-move"></button>
+  <button class="move-button" onclick="playMove('scissors')"><img src="image/scissors-emoji.png" alt="Scissors" title="Scissors" class = "player-move"></button>`;
 }
 
 function showResults() {
@@ -138,4 +138,24 @@ document.querySelector('.game-stop').innerHTML = `<button onclick="showResults()
 document.querySelector('.button-container').innerHTML = `<button class="move-button" onclick="playMove('rock')"><img src="image/rock-emoji.png" alt="Rock" class = "player-move"></button>
 <button class="move-button" onclick="playMove('paper')"><img src="image/paper-emoji.png" alt="Paper" class = "player-move"></button>
 <button class="move-button" onclick="playMove('scissors')"><img src="image/scissors-emoji.png" alt="Scissors" class = "player-move"></button>`;
+}
+
+function rules() {
+  document.querySelector('.catch1').innerHTML = `<button class="helped-button" onclick="withdrow()">Show Rules</button>`;
+  document.querySelector('.rules-content').innerHTML = `
+  <div class="work">
+    <p>1. Rock beats Scissors</p>
+    <p>2. Scissors beats Paper</p>
+    <p>3. Paper beats Rock</p>
+    <p>4. If both players choose the same move, it's a tie.</p>
+    <p>5. If player stop the game, he can continue or restart it.</p>
+    <p>6. Players can choose to restart the game at any time.</p>
+    <p>7. Have fun and enjoy the game!</p>
+  </div>
+  `;
+}
+
+function withdrow () {
+  document.querySelector('.catch1').innerHTML = `<button onclick="rules();" class="help-button">Rules</button>`
+  document.querySelector('.rules-content').innerHTML = `<div class="rules-content"></div>`
 }

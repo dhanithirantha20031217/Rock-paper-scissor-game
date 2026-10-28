@@ -10,12 +10,12 @@
 </head>
 
 <body>
-  <h1 id="title">Rock Paper Scissors</h1>
+  <h1 class="title">Rock Paper Scissors</h1>
   <p class="start-massege"></p>
   <div class="button-container">
-  <button class="move-button" onclick="playMove('rock')"><img src="image/rock-emoji.png" alt="Rock" class = "player-move"></button>
-  <button class="move-button" onclick="playMove('paper')"><img src="image/paper-emoji.png" alt="Paper" class = "player-move"></button>
-  <button class="move-button" onclick="playMove('scissors')"><img src="image/scissors-emoji.png" alt="Scissors" class = "player-move">  </button>
+  <button class="move-button" onclick="playMove('rock')"><img src="image/rock-emoji.png" alt="Rock" title="Rock" class = "player-move"></button>
+  <button class="move-button" onclick="playMove('paper')"><img src="image/paper-emoji.png" alt="Paper" title="Paper" class = "player-move"></button>
+  <button class="move-button" onclick="playMove('scissors')"><img src="image/scissors-emoji.png" alt="Scissors" title="Scissors" class = "player-move">  </button>
   </div>
 
   <div class="game-info">
@@ -27,6 +27,7 @@
   
   <div class="game-stop">
     <button onclick="showResults()" class="game-stop-button">Stop Game</button>   
+    
   </div>
   
   <div class="game-restart">
