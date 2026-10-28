@@ -67,6 +67,7 @@ else if(playerChoice === 'scissors') {
 localStorage.setItem('score', JSON.stringify(score));
 
   updateState();
+  document.getElementById('play-music').src = 'audio/click.mp3';
 }
 
 function resetGame() {
@@ -102,6 +103,7 @@ function updateReset() {
   document.querySelector('.button-container').innerHTML = `<button class="move-button" onclick="playMove('rock')"><img src="image/rock-emoji.png" alt="Rock" title="Rock" class = "player-move"></button>
   <button class="move-button" onclick="playMove('paper')"><img src="image/paper-emoji.png" alt="Paper" title="Paper" class = "player-move"></button>
   <button class="move-button" onclick="playMove('scissors')"><img src="image/scissors-emoji.png" alt="Scissors" title="Scissors" class = "player-move"></button>`;
+  document.getElementById('play-music').src = 'audio/reset.mp3';
 }
 
 function showResults() {
@@ -110,18 +112,21 @@ function showResults() {
     document.querySelector('.js-result').innerHTML = `<p>Final Score: Wins = ${score.wins}, Losses = ${score.losses}, Ties = ${score.ties}</p>`;
     document.querySelector('.js-state').innerHTML = '';
     document.querySelector('.js-score').innerHTML = '';
+    document.getElementById('play-music').src = 'audio/win.mp3';
   }
   else if (score.wins < score.losses) {
     document.querySelector('.js-play-time').innerHTML = `<p>😞Sorry! You lost the game!😞</p>`;
     document.querySelector('.js-result').innerHTML = `<p>Final Score: Wins = ${score.wins}, Losses = ${score.losses}, Ties = ${score.ties}</p>`;
     document.querySelector('.js-state').innerHTML = '';
     document.querySelector('.js-score').innerHTML = '';
+    document.getElementById('play-music').src = 'audio/loss.mp3';
   }
   else if (score.wins === score.losses) {
     document.querySelector('.js-play-time').innerHTML = `<p>😐It's a tie!😐</p>`;
     document.querySelector('.js-result').innerHTML = `<p>Final Score: Wins = ${score.wins}, Losses = ${score.losses}, Ties = ${score.ties}</p>`;
     document.querySelector('.js-state').innerHTML = '';
     document.querySelector('.js-score').innerHTML = '';
+    document.getElementById('play-music').src = 'audio/tie.mp3';
   }
   document.querySelector('.game-stop').innerHTML = `<button class="game-continue-button" onclick="continueGame()">Continue</button>`;
   document.querySelector('.button-container').innerHTML = `<button class="move-button"><img src="image/rock-emoji.png" alt="Rock" class = "player-move"></button>
@@ -138,10 +143,11 @@ document.querySelector('.game-stop').innerHTML = `<button onclick="showResults()
 document.querySelector('.button-container').innerHTML = `<button class="move-button" onclick="playMove('rock')"><img src="image/rock-emoji.png" alt="Rock" class = "player-move"></button>
 <button class="move-button" onclick="playMove('paper')"><img src="image/paper-emoji.png" alt="Paper" class = "player-move"></button>
 <button class="move-button" onclick="playMove('scissors')"><img src="image/scissors-emoji.png" alt="Scissors" class = "player-move"></button>`;
+document.getElementById('play-music').src = 'audio/click.mp3';
 }
 
 function rules() {
-  document.querySelector('.catch1').innerHTML = `<button class="helped-button" onclick="withdrow()">Show Rules</button>`;
+  document.querySelector('.catch1').innerHTML = `<button class="helped-button" onclick="withdrow()">Showed Rules</button>`;
   document.querySelector('.rules-content').innerHTML = `
   <div class="work">
     <p>1. Rock beats Scissors</p>
@@ -153,9 +159,11 @@ function rules() {
     <p>7. Have fun and enjoy the game!</p>
   </div>
   `;
+  document.getElementById('music').src = 'audio/click.mp3';
 }
 
 function withdrow () {
   document.querySelector('.catch1').innerHTML = `<button onclick="rules();" class="help-button">Rules</button>`
   document.querySelector('.rules-content').innerHTML = `<div class="rules-content"></div>`
+  document.getElementById('music').src = 'audio/click.mp3';
 }
