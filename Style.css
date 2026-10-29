@@ -24,6 +24,10 @@ body {
   cursor: pointer;
 }
 
+.move-button:hover{
+  transform: scale(1.19);
+}
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -56,6 +60,10 @@ body {
   font-weight: bold;
 }
 
+.game-stop-button:hover{
+  transform: scale(1.19);
+}
+
 .game-restart {
   text-align: center;
   margin-top: 20px;
@@ -71,6 +79,10 @@ body {
   cursor: pointer;
   font-family: Arial, sans-serif;
   font-weight: bold;
+}
+
+.game-restart-button:hover{
+  transform: scale(1.19);
 }
 
 .start-massege {
@@ -91,6 +103,10 @@ body {
   cursor: pointer;
   font-family: Arial, sans-serif;
   font-weight: bold;
+}
+
+.game-continue-button:hover{
+  transform: scale(1.19);
 }
 
 .background-image {
@@ -130,6 +146,10 @@ body {
   margin: 20px;
 }
 
+.help-button:hover{
+  transform: scale(1.19);
+}
+
 .start-game-button {
   background-color: rgb(0, 128, 0);
   color: rgb(255, 255, 255);
@@ -140,6 +160,10 @@ body {
   cursor: pointer;
   font-family: Arial, sans-serif;
   font-weight: bold;
+}
+
+.start-game-button:hover{
+  transform: scale(1.19);
 }
 
 .button-help {
@@ -177,4 +201,8 @@ body {
   font-family: Arial, sans-serif;
   font-weight: bold;
   margin: 20px;
+}
+
+.helped-button:hover{
+  transform: scale(1.19);
 }
