@@ -1,208 +1,233 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
   color: rgb(255, 255, 255);
   text-align: center;
-  font-size: 40px;
-  font-family: Arial, sans-serif;
+  font-size: clamp(24px, 5vw, 40px);
   font-weight: bold;
+  margin-top: 10px;
 }
 
-.player-move {
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-}
-
-.move-button {
-  background-color: transparent;
-  border: 3px solid rgb(255, 255, 255);
-  border-radius: 100px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.move-button:hover{
-  transform: scale(1.19);
+#headline {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: clamp(26px, 6vw, 50px);
+  margin-bottom: 40px;
 }
 
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.move-button {
+  background-color: transparent;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.move-button:hover {
+  transform: scale(1.1);
+}
+
+.player-move {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.js-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.js-state .player-move {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+}
+
+.start-massage {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: clamp(18px, 4vw, 24px);
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .game-info {
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 20px;
+  font-size: clamp(16px, 4vw, 20px);
   margin-top: 20px;
-  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 600px;
 }
 
-.game-stop {
+.game-info p {
+  margin-bottom: 10px;
+}
+
+
+.game-stop,
+.game-restart {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.game-stop-button,
+.game-restart-button,
+.game-continue-button {
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
 }
 
 .game-stop-button {
   background-color: rgb(255, 0, 0);
-  color: rgb(255, 255, 255);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-}
-
-.game-stop-button:hover{
-  transform: scale(1.19);
-}
-
-.game-restart {
-  text-align: center;
-  margin-top: 20px;
 }
 
 .game-restart-button {
   background-color: rgb(0, 128, 0);
-  color: rgb(255, 255, 255);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-}
-
-.game-restart-button:hover{
-  transform: scale(1.19);
-}
-
-.start-massege {
-  text-align: center;
-  color: rgb(255, 255, 255);
-  font-size: 20px;
-  margin-top: 20px;
-  font-family: Arial, sans-serif;
 }
 
 .game-continue-button {
   background-color: rgb(0, 0, 255);
-  color: rgb(255, 255, 255);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
 }
 
-.game-continue-button:hover{
-  transform: scale(1.19);
-}
-
-.background-image {
-  width: 20%;
-  height: 30%;
+.game-stop-button:hover,
+.game-restart-button:hover,
+.game-continue-button:hover {
+  transform: scale(1.08);
 }
 
 .background-images {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
-  left: 0;
+  gap: 20px;
   width: 100%;
-  height: 100%;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.background-image {
+  width: 25%;
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.button-help {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
 }
 
-#headline {
-  text-align: center;
-  color: rgb(255, 255, 255);
-  font-size: 50px;
-  margin-bottom: 100px;
-  font-family: Arial, sans-serif;
-}
-
-.help-button {
-  background-color: rgb(0, 0, 255);
+.help-button,
+.start-game-button,
+.helped-button {
   color: rgb(255, 255, 255);
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 25px;
-  font-size: 30px;
+  font-size: clamp(18px, 4vw, 24px);
   cursor: pointer;
-  font-family: Arial, sans-serif;
   font-weight: bold;
-  margin: 20px;
+  transition: transform 0.2s ease;
+  margin: 5px;
 }
 
-.help-button:hover{
-  transform: scale(1.19);
+.help-button,
+.helped-button {
+  background-color: rgb(0, 0, 255);
 }
 
 .start-game-button {
   background-color: rgb(0, 128, 0);
-  color: rgb(255, 255, 255);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 30px;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
 }
 
-.start-game-button:hover{
-  transform: scale(1.19);
-}
-
-.button-help {
-  color: rgb(255, 255, 255);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 30px;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.help-button:hover,
+.start-game-button:hover,
+.helped-button:hover {
+  transform: scale(1.08);
 }
 
 .work {
-  margin: 20%;
-  padding: 5%;
+  margin: 20px auto;
+  padding: 20px;
   background-color: rgb(0, 128, 0);
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  margin-top: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.helped-button {
-  background-color: rgb(0, 0, 255);
   color: rgb(255, 255, 255);
-  padding: 12px;
-  border: none;
-  border-radius: 25px;
-  font-size: 30px;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  margin: 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  max-width: 500px;
+  text-align: left;
+  line-height: 1.6;
 }
 
-.helped-button:hover{
-  transform: scale(1.19);
+@media (max-width: 480px) {
+  .player-move {
+    width: 60px;
+    height: 60px;
+  }
+
+  .move-button {
+    padding: 8px;
+    border-width: 2px;
+  }
+
+  .button-container {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .button-help {
+    flex-direction: column;
+  }
+
+  .work {
+    width: 90%;
+    font-size: 14px;
+    padding: 15px;
+  }
 }
